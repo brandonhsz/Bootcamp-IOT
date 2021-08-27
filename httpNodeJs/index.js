@@ -8,9 +8,15 @@ app.get("/", (req, res) => {
   const temperature = req.query.temp;
 
   if (temperature < 21) {
-    res.send(`Status -> On ${temperature}`);
+    res.send(`
+      <meta http-equiv="refresh" content="3">
+      <h1>Status -> On ${temperature}</h1>
+    `);
   } else {
-    res.send(`off -> Off ${temperature}`);
+    res.send(`
+      <meta http-equiv="refresh" content="3">
+      <h1>off -> Off ${temperature}</h1>
+    `);
   }
 });
 
